@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoja de vida – Ana Sofía Gómez Jiménez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Dancing+Script:wght@600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lilac:#E9DDF7; --lilac-2:#D9C5F0; --orchid:#B79AE0; --violet:#6f46aa; --plum:#46276f; --ink:#24143d;
+    --blush:#F8E4F1; --cream:#FFF9FD; --muted:#4a3b69;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:#d7cce6}
+  body{font-family:"Quicksand",Calibri,Arial,sans-serif;color:var(--ink);font-size:9.8pt;font-weight:500;line-height:1.45;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--plum)}
+  svg.bow{aspect-ratio:100/60;height:auto}
+  @page{size:A4;margin:0}
+  .page{width:210mm;height:297mm;margin:10mm auto;background:var(--cream);position:relative;overflow:hidden;
+        box-shadow:0 2px 14px rgba(91,58,140,.3);page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+  @media print{html{background:none}.page{margin:0;box-shadow:none}}
+  /* marco con costura */
+  .page::before{content:"";position:absolute;inset:6mm;border:.5mm solid var(--lilac-2);border-radius:5mm;pointer-events:none}
+  .page::after{content:"";position:absolute;inset:8mm;border:.35mm dashed var(--orchid);border-radius:4mm;pointer-events:none}
+
+  .inner{position:absolute;inset:11mm;display:flex}
+
+  /* barra lateral */
+  aside{width:60mm;background:linear-gradient(180deg,var(--lilac),var(--blush));border-radius:4mm;padding:8mm 6mm;margin-right:6mm;
+        border:.4mm solid var(--lilac-2)}
+  .avatar{text-align:center;margin-bottom:4mm}
+  .avatar svg{width:20mm}
+  aside h2{font-size:12.5pt;font-weight:700;margin:5mm 0 2mm;padding-bottom:1mm;border-bottom:.4mm dotted var(--violet);display:flex;align-items:center;gap:1.5mm}
+  aside h2::before{content:"♡";color:var(--violet);font-size:10pt}
+  aside ul{list-style:none;font-size:8.8pt}
+  aside li{margin-bottom:1.5mm}
+  .lbl{display:block;font-size:7pt;text-transform:uppercase;letter-spacing:.1em;color:var(--violet);font-weight:600}
+  aside a{text-decoration:none;color:var(--ink);word-break:break-all}
+
+  .links{display:flex;flex-direction:column;gap:2.4mm}
+  .link{display:flex;align-items:center;gap:2.5mm}
+  .logo{flex:none;width:8mm;height:8mm;border-radius:50%;background:#fff;border:.4mm solid var(--lilac-2);display:grid;place-items:center}
+  .logo svg{width:5mm;height:5mm}
+  .link .txt{display:flex;flex-direction:column;min-width:0;font-size:8.2pt}
+  .link b{font-size:8.6pt}
+  .ph{color:var(--violet)}
+  .cv-link{margin-top:3mm;background:#fff;border:.4mm dashed var(--violet);border-radius:3mm;padding:2mm 3mm;font-size:8.2pt}
+  .cv-link b{display:block;font-size:7pt;text-transform:uppercase;letter-spacing:.1em;color:var(--violet)}
+
+  .tags{display:flex;flex-wrap:wrap;gap:1.4mm}
+  .tags span{background:#fff;border:.35mm solid var(--lilac-2);border-radius:10mm;padding:.5mm 2.4mm;font-size:7.8pt}
+
+  /* principal */
+  main{flex:1;padding-top:2mm}
+  .name{text-align:center;margin-bottom:4mm}
+  .name svg{width:17mm;display:block;margin:0 auto}
+  .name h1{font-size:27pt;line-height:1;font-weight:700}
+  .name .role{font-family:"Dancing Script",cursive;font-size:14pt;color:var(--violet);margin-top:1mm}
+  .name .sub{font-size:8.6pt;color:var(--muted)}
+  section{margin-bottom:5mm}
+  main h2{font-size:15pt;font-weight:700;display:flex;align-items:center;gap:2.5mm;margin-bottom:2.2mm}
+  main h2::after{content:"";flex:1;border-bottom:.4mm dotted var(--orchid)}
+  main h2::before{content:"♡";color:var(--violet);font-size:11pt}
+  .item{margin-bottom:3mm}
+  .item h3{font-size:12.5pt;font-weight:700;display:flex;justify-content:space-between;align-items:baseline;gap:3mm;line-height:1.2}
+  .item h3 small{font-family:"Quicksand",sans-serif;font-size:7.8pt;font-weight:600;color:#fff;background:var(--violet);
+                  border-radius:10mm;padding:.4mm 2.6mm;white-space:nowrap}
+  .org{color:var(--muted);font-size:9pt;margin-bottom:.8mm}
+  main ul{padding-left:0;list-style:none}
+  main li{position:relative;padding-left:4.5mm;margin-bottom:.8mm}
+  main li::before{content:"♡";position:absolute;left:0;color:var(--orchid);font-size:8pt}
+
+  .proj{background:#fff;border:.4mm solid var(--lilac-2);border-radius:3.5mm;padding:2.6mm 4mm;margin-bottom:2.6mm;position:relative}
+  .proj h3{font-size:12.5pt;font-weight:700}
+  .proj p{font-size:9.2pt}
+  .skillgrid{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+  .skill{background:linear-gradient(160deg,var(--lilac),var(--blush));border:.4mm solid var(--lilac-2);border-radius:3.5mm;padding:2.8mm 3.5mm}
+  .skill h3{font-size:12pt;font-weight:700}
+  .skill img{height:7.5mm;display:block;margin:1mm 0 1.6mm}
+  .skill ul{font-size:8.8pt}
+  .ia{margin-top:3mm;font-size:9pt}
+  .quote{margin-top:2.5mm;padding:3.5mm 5mm;background:linear-gradient(135deg,var(--orchid),var(--violet));color:#fff;border-radius:3.5mm;
+         text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:12pt}
+  .pg-head{text-align:center;font-family:"Dancing Script",cursive;font-size:15pt;color:var(--violet);margin-bottom:1mm}
+  .pg-sub{text-align:center;font-size:8.3pt;color:var(--muted);margin-bottom:5mm}
+  .full{flex-direction:column;padding:2mm 4mm 0}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bow" viewBox="0 0 100 60">
+      <path d="M50 30C38 8 8 2 6 18c-2 16 24 20 44 12z" fill="#D9C5F0" stroke="#8a63c2" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M50 30C62 8 92 2 94 18c2 16-24 20-44 12z" fill="#D9C5F0" stroke="#8a63c2" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M50 30C40 40 30 52 24 58M50 30c10 10 20 22 26 28" fill="none" stroke="#8a63c2" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 14c8-3 16 0 22 8M80 14c-8-3-16 0-22 8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <ellipse cx="50" cy="30" rx="8" ry="9" fill="#B79AE0" stroke="#8a63c2" stroke-width="2.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= PÁGINA 1 ================= -->
+<div class="page">
+ <div class="inner">
+  <aside>
+    <div class="avatar"><svg class="bow"><use href="#bow"/></svg></div>
+
+    <h2 style="margin-top:0">Contacto</h2>
+    <ul>
+      <li><span class="lbl">Ubicación</span>Medellín, Antioquia, Colombia</li>
+      <li><span class="lbl">Correo</span><a href="mailto:anagj17x@gmail.com">anagj17x@gmail.com</a></li>
+      <li><span class="lbl">Teléfono</span>310 842 6367</li>
+    </ul>
+
+    <h2>Enlaces</h2>
+    <div class="links">
+      <div class="link">
+        <span class="logo"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M5.2 9.5h2.9V19H5.2zM6.65 5a1.7 1.7 0 110 3.4 1.7 1.7 0 010-3.4zM10 9.5h2.8v1.3c.4-.8 1.4-1.5 2.9-1.5 3 0 3.5 2 3.5 4.5V19h-2.9v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19H10z"/></svg></span>
+        <span class="txt"><b>LinkedIn</b><a href="https://www.linkedin.com/in/ana-sofia-gomez">in/ana-sofia-gomez</a></span>
+      </div>
+      <div class="link">
+        <span class="logo"><svg viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="4" fill="#FF0000"/><path fill="#fff" d="M10 9l5.5 3-5.5 3z"/></svg></span>
+        <span class="txt"><b>YouTube</b><a href="#" class="ph">[Pega aquí el enlace]</a></span>
+      </div>
+      <div class="link">
+        <span class="logo"><svg viewBox="0 0 24 24"><path fill="#FC6D26" d="M12 22.2L2.3 14.6 4.7 7.5l2.3 5h10l2.3-5 2.4 7.1z"/><path fill="#E24329" d="M12 22.2L7 12.5h10zM4.7 7.5L7 12.5H2.3z"/><path fill="#FCA326" d="M19.3 7.5l-2.3 5h4.7z"/></svg></span>
+        <span class="txt"><b>GitLab</b><a href="#" class="ph">[Pega aquí el enlace]</a></span>
+      </div>
+    </div>
+    <div class="cv-link"><b>Currículum en línea</b><a href="#" class="ph">[Pega aquí el enlace a tu currículum]</a></div>
+
+    <h2>Idiomas</h2>
+    <ul>
+      <li><b>Español</b> · nativo</li>
+      <li><b>Inglés</b> · B1, en formación hacia B2</li>
+    </ul>
+
+    <h2>Habilidades blandas</h2>
+    <div class="tags">
+      <span>Trabajo en equipo</span><span>Comunicación efectiva</span><span>Resolución de problemas</span>
+      <span>Responsabilidad</span><span>Creatividad e iniciativa</span><span>Aprendizaje continuo</span><span>Atención al detalle</span>
+    </div>
+  </aside>
+
+  <main>
+    <div class="name">
+      <svg class="bow"><use href="#bow"/></svg>
+      <h1>Ana Sofía Gómez Jiménez</h1>
+      <div class="role">Desarrolladora de software</div>
+      <div class="sub">Técnica en Análisis y Desarrollo de Software · Tecnóloga en formación (ADSO)</div>
+    </div>
+
+    <section>
+      <h2>Perfil profesional</h2>
+      <p>Técnica graduada en Análisis y Desarrollo de Software, actualmente cursando la Tecnología en ADSO en el SENA. Cuento con conocimientos en programación, bases de datos, desarrollo web, lógica computacional y análisis de requerimientos. Me interesa crear soluciones tecnológicas útiles, funcionales e intuitivas, fortaleciendo mis habilidades mediante proyectos académicos y aprendizaje práctico. Me caracterizan la disposición para aprender, la responsabilidad, la creatividad y el trabajo en equipo.</p>
+    </section>
+
+    <section>
+      <h2>Formación académica</h2>
+      <div class="item">
+        <h3>Tecnología en Análisis y Desarrollo de Software <small>En formación</small></h3>
+        <div class="org">Servicio Nacional de Aprendizaje — SENA</div>
+      </div>
+      <div class="item">
+        <h3>Técnica en Análisis y Desarrollo de Software <small>Graduada</small></h3>
+        <div class="org">Servicio Nacional de Aprendizaje — SENA</div>
+      </div>
+      <div class="item">
+        <h3>Educación media (Bachillerato)</h3>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experiencia laboral</h2>
+      <div class="item">
+        <h3>Apoyo en ventas y atención al cliente</h3>
+        <div class="org">Almacén · experiencia temporal en temporadas comerciales</div>
+        <ul>
+          <li>Atención y orientación de clientes.</li>
+          <li>Colaboración en actividades comerciales durante temporadas de alta demanda.</li>
+          <li>Desarrollo de habilidades de comunicación, organización y trabajo en equipo.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>Proyectos académicos de desarrollo de software</h3>
+        <div class="org">SENA — Tecnología ADSO</div>
+        <ul>
+          <li>Diseño de plataformas y bases de datos, y desarrollo de aplicaciones: EDUSYSTEM, EcoSENA, Sistema inmobiliario y Lista de compras (detalle en la página 2).</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+ </div>
+</div>
+
+<!-- ================= PÁGINA 2 ================= -->
+<div class="page">
+ <div class="inner full">
+  <div class="pg-head">Ana Sofía Gómez Jiménez</div>
+  <div class="pg-sub">anagj17x@gmail.com · 310 842 6367 · Medellín, Colombia</div>
+
+  <section>
+    <h2 style="font-size:15pt">Habilidades técnicas</h2>
+    <div class="skillgrid">
+      <div class="skill">
+        <h3>Lenguajes de programación</h3>
+        <img src="https://skillicons.dev/icons?i=python,js" alt="Python y JavaScript">
+        <ul>
+          <li><b>Python:</b> fundamentos, condicionales, ciclos, listas y algoritmos.</li>
+          <li><b>JavaScript:</b> variables, funciones, arreglos, condicionales y estructuras repetitivas.</li>
+          <li><b>PSeInt:</b> pseudocódigo y lógica de programación.</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Desarrollo web</h3>
+        <img src="https://skillicons.dev/icons?i=html,css,bootstrap" alt="HTML, CSS y Bootstrap">
+        <ul>
+          <li><b>HTML y CSS:</b> fundamentos de estructura y estilos.</li>
+          <li><b>Bootstrap:</b> componentes, botones, tablas y diseño adaptable.</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Bases de datos</h3>
+        <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL">
+        <ul>
+          <li>SQL y MySQL; diseño de bases de datos relacionales.</li>
+          <li>Entidades, atributos, claves primarias y foráneas.</li>
+          <li>Relaciones, normalización, consultas y operaciones CRUD.</li>
+          <li>Integridad de datos y fundamentos de triggers.</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Herramientas de desarrollo</h3>
+        <img src="https://skillicons.dev/icons?i=nodejs,idea,git,github,vscode" alt="Node.js, IntelliJ IDEA, Git, GitHub y Visual Studio Code">
+        <ul>
+          <li><b>Node.js:</b> aplicaciones de consola y gestión de listas.</li>
+          <li><b>IntelliJ IDEA y VS Code:</b> entornos de desarrollo.</li>
+          <li><b>Git y GitHub:</b> control de versiones y organización de proyectos.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ia"><b>Inteligencia artificial:</b> uso Gemini y ChatGPT como apoyo al aprendizaje (comprensión de errores, explicación de conceptos, generación de ideas), verificando siempre sus resultados.</p>
+  </section>
+
+  <section>
+    <h2>Proyectos destacados</h2>
+    <div class="proj"><h3>🎓 EDUSYSTEM</h3>
+      <p>Plataforma educativa propuesta para centralizar la información académica, facilitar el seguimiento de notas y mejorar la comunicación entre la institución, los estudiantes y sus acudientes.</p></div>
+    <div class="proj"><h3>🌱 EcoSENA</h3>
+      <p>Solución digital propuesta para apoyar el registro y seguimiento de las visitas del COPASST, reducir el uso de documentos físicos y mejorar la organización de la información.</p></div>
+    <div class="proj"><h3>🏠 Sistema inmobiliario</h3>
+      <p>Proyecto de bases de datos para gestionar propiedades, clientes y contratos, aplicando relaciones entre tablas, consultas SQL y restricciones de integridad.</p></div>
+    <div class="proj"><h3>🛒 Lista de compras</h3>
+      <p>Aplicación de consola en JavaScript y Node.js para agregar, consultar, eliminar y administrar elementos mediante arreglos y un menú interactivo (CRUD).</p></div>
+  </section>
+
+  <section>
+    <h2>Objetivo profesional</h2>
+    <p>Seguir creciendo como desarrolladora de software, fortalecer mis conocimientos en programación y bases de datos, participar en proyectos reales y crear soluciones tecnológicas que aporten valor a las personas y a las organizaciones.</p>
+    <div class="quote">“Cada línea de código es una oportunidad para aprender, innovar y construir algo mejor.”</div>
+  </section>
+ </div>
+</div>
+
+</body>
+</html>
